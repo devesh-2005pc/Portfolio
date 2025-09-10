@@ -1,0 +1,156 @@
+/* 🔹 Default navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 48px;
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  transition: all 0.5s ease; /* 👈 smoother */
+}
+
+.navbar .logo {
+  font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.5s ease; /* 👈 smooth fade */
+}
+
+/* Fade-out effect for logo */
+.logo.fade-out {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.9);
+  pointer-events: none;
+}
+
+/* 🔹 Nav list */
+.navbar ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-right: 60px;
+}
+
+.navbar ul li {
+  margin-left: 32px;
+}
+
+.navbar ul li a {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  position: relative;
+}
+
+.navbar ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffd369;
+  transition: width 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+  width: 100%;
+}
+
+.navbar ul li a:hover {
+  color: #ffd369;
+}
+
+/* 🔹 Right section wrapper */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  transition: all 0.5s ease;
+}
+
+/* ===================================================== */
+/* 🔹 SCROLL EFFECT */
+/* ===================================================== */
+.navbar.scrolled {
+  padding: 8px 0;
+  background: transparent;
+  box-shadow: none;
+  justify-content: center;
+}
+
+/* Floating glass nav box */
+.navbar.scrolled .nav-right {
+  margin: auto;
+  background: rgba(30, 60, 114, 0.65);
+  border-radius: 16px;
+  padding: 10px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.5s ease;
+  transform: scale(0.95);
+  opacity: 0;
+  animation: floatBoxIn 0.5s ease forwards;
+}
+
+/* Animation for floating box */
+@keyframes floatBoxIn {
+  0% {
+    transform: translateY(-10px) scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Nav links inside scrolled box */
+.navbar.scrolled .nav-right ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar.scrolled .nav-right ul li {
+  margin: 0 16px;
+}
+
+.navbar.scrolled .nav-right ul li a {
+  font-size: 0.95rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled .nav-right ul li a:hover {
+  background: #ffd369;
+  color: #1e3c72;
+}
+
+/* 🔹 Theme toggle inside navbar */
+.theme-toggle {
+  position: static;
+  margin-left: 16px;
+  z-index: auto;
+}

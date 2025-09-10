@@ -1,0 +1,253 @@
+/* Wrapper section for About */
+.about-wrapper {
+  position: relative;
+  background: linear-gradient(to bottom, #f0fdfa, #ffffff);
+  overflow: hidden;
+  padding-bottom: 140px; /* space for wave bottom */
+  margin-top: 0px;
+}
+
+/* Decorative floating blobs */
+.blob {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  animation: float 8s infinite ease-in-out;
+  z-index: 0;
+}
+
+.blob-1 {
+  top: 70%;
+  left: 10%;
+  background: #0ea5e9;
+}
+
+.blob-2 {
+  top: 80%;
+  right: 15%;
+  background: #14b8a6;
+  animation-delay: 3s;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-40px) scale(1.1); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Wavy bottom divider */
+.about-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  background: url("https://svgwave.in/sine-wave.svg") no-repeat bottom;
+  background-size: cover;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+/* Your existing About box */
+.about {
+  padding: 80px 50px;
+  background: linear-gradient(135deg, #ccfbf1, #99f6e4);
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  margin: 40px auto;
+  max-width: 1100px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* ✨ Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(80px);
+  filter: blur(12px);
+  transition: all 0.9s ease-in-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Decorative sprinkles inside card */
+.about::before,
+.about::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.12;
+  z-index: 0;
+}
+
+.about::before {
+  width: 120px;
+  height: 120px;
+  background-color: #0ea5e9;
+  top: -40px;
+  left: -50px;
+}
+
+.about::after {
+  width: 160px;
+  height: 160px;
+  background-color: #14b8a6;
+  bottom: -60px;
+  right: -70px;
+}
+
+/* Content wrapper */
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Left side image */
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Right side text */
+.about-text {
+  flex: 2;
+  text-align: left;
+}
+
+.about-text h1 {
+  font-size: 2.8rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: #0f766e;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.about-text p {
+  font-size: 1.15rem;
+  color: #334155;
+  line-height: 1.9;
+  text-align: justify;
+}
+
+.about strong {
+  color: #0f766e;
+  font-weight: 600;
+}
+
+/* Responsive for mobiles */
+@media (max-width: 768px) {
+  .about {
+    padding: 50px 20px;
+    margin: 40px auto;
+  }
+
+  .about-content {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-text p {
+    text-align: justify;
+  }
+
+  .about-image img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .about-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+}
+
+/* 🌙 DARK MODE OVERRIDES */
+/* 🌙 DARK MODE OVERRIDES */
+.dark .about-wrapper {
+  background: linear-gradient(to bottom, #1e2a3b, #22334a); /* slightly lighter than before */
+}
+
+.dark .about {
+  background: linear-gradient(135deg, #273545, #1f2c3b); /* subtle lighter blue tint */
+  box-shadow: 0 16px 40px rgba(14, 165, 233, 0.25);
+}
+
+.dark .blob-1 {
+  background: #38bdf8;
+}
+
+.dark .blob-2 {
+  background: #5eead4;
+}
+
+.dark .about-text h1 {
+  color: #38bdf8;
+}
+
+.dark .about-text h2 {
+  color: #5eead4;
+}
+
+.dark .about-text p {
+  color: #e2e8f0;
+}
+
+.dark .about strong {
+  color: #5eead4;
+}
+
+.dark .about::before {
+  background-color: #38bdf8;
+}
+
+.dark .about::after {
+  background-color: #0ea5e9;
+}

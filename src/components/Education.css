@@ -1,0 +1,171 @@
+/* ---------- DARK THEME (default) ---------- */
+.education-section {
+  padding: 80px 10%;
+  background: #0f172a;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.section-title {
+  text-align: left; /* left aligned */
+  font-size: 3rem; /* prominent size */
+  font-weight: 800; /* bold and strong */
+  letter-spacing: 2px; /* elegant spacing */
+  margin-bottom: 50px; /* space below heading */
+  color: #0ea5e9; /* accent color */
+  position: relative;
+  font-family: 'Poppins', sans-serif; /* clean modern font */
+}
+
+/* Add a subtle left-aligned underline */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 120px; /* underline length */
+  height: 4px; /* thickness */
+  background: #0ea5e9; /* matching accent */
+  margin-top: 10px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Optional hover effect for interactivity */
+.section-title:hover::after {
+  width: 150px; /* slightly expand on hover */
+  background: #14b8a6; /* subtle color change */
+}
+
+
+/* Timeline Container */
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 40px;
+  border-left: 3px solid #0ea5e9;
+}
+
+/* Timeline Item */
+.timeline-item {
+  position: relative;
+  background: #1e293b;
+  border: 1px solid #0ea5e9;
+  border-radius: 8px;
+  padding: 20px 25px;
+  margin-bottom: 30px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.timeline-item:hover {
+  background: #0ea5e9;
+  color: #0f172a;
+  box-shadow: 0 6px 18px rgba(14, 165, 233, 0.4);
+  transform: translateY(-5px);
+}
+
+/* Timeline Icon */
+.timeline-icon {
+  position: absolute;
+  left: -52px;
+  top: 22px;
+  background: #0ea5e9;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1rem;
+  box-shadow: 0 0 12px rgba(14, 165, 233, 0.7);
+}
+
+/* Date */
+.timeline-date {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #38bdf8;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* Heading */
+.timeline-item h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+/* Description */
+.timeline-item p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .education-section {
+    padding: 60px 20px;
+  }
+
+  .timeline {
+    padding-left: 25px;
+  }
+
+  .timeline-icon {
+    left: -40px;
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+  }
+
+  .timeline-item {
+    padding: 18px;
+  }
+}
+
+/* ---------- LIGHT THEME (overrides) ---------- */
+
+/* ---------- LIGHT THEME (overrides, improved) ---------- */
+.light .education-section {
+  background: #f0f9ff; /* very light blue background instead of plain white */
+  color: #1e293b;
+}
+
+.light .section-title {
+  color: #0f172a;
+}
+
+.light .timeline {
+  border-left: 3px solid #2563eb; /* blue-600 */
+}
+
+.light .timeline-item {
+  background: #e0f2fe; /* soft light blue */
+  border: 1px solid #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15); /* soft blue shadow */
+  transition: all 0.3s ease;
+}
+
+.light .timeline-item:hover {
+  background: #2563eb; /* solid blue on hover */
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+}
+
+.light .timeline-icon {
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.6);
+}
+
+.light .timeline-date {
+  color: #1e40af; /* deeper blue for dates */
+}
+
+.light .timeline-item h3 {
+  color: #0f172a;
+}
