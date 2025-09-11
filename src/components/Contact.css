@@ -221,3 +221,61 @@
     text-align: left;
   }
 }
+/* ---------- Responsive (Mobile View) ---------- */
+@media (max-width: 768px) {
+  .contact {
+    padding: 50px 15px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .contact-info,
+  .contact-form-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .sub-heading {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .sub-text {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .info-box {
+    padding: 15px;
+    font-size: 0.9rem;
+    gap: 10px;
+  }
+
+  .info-icon {
+    font-size: 1.3rem;
+  }
+
+  .contact-form-wrapper h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .contact form {
+    padding: 20px;
+  }
+
+  .contact input,
+  .contact textarea {
+    font-size: 0.9rem;
+    padding: 12px 14px;
+  }
+
+  .contact button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}

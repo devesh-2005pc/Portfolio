@@ -38,26 +38,28 @@ const Home = () => {
 
   return (
     <section className="home">
-      <div className="intro">
-        <h1>Hi, I'm <span>Devesh Chaudhari</span></h1>
-        <p className="subtitle typing">
-          {displayText}<span className="cursor">|</span>
-        </p>
-        <p className="tagline">
-          Passionate about building modern web applications with MERN Stack.
-        </p>
-        <div className="buttons">
-          <a href={resumeFile} target="_blank" rel="noopener noreferrer" className="btn">
-            Download Resume
-          </a>
-          <a href="#contact" className="btn secondary">Let's Talk</a>
+      {/* Wrap intro + image in a container for proper mobile stacking */}
+      <div className="home-container">
+        <div className="intro">
+          <h1>Hi, I'm <span>Devesh Chaudhari</span></h1>
+          <p className="subtitle typing">
+            {displayText}<span className="cursor">|</span>
+          </p>
+          <p className="tagline">
+            Passionate about building modern web applications with MERN Stack.
+          </p>
+          <div className="buttons">
+            <a href={resumeFile} target="_blank" rel="noopener noreferrer" className="btn">
+              Download Resume
+            </a>
+            <a href="#contact" className="btn secondary">Let's Talk</a>
+          </div>
         </div>
-      </div>
 
-      {/* 🔥 Fixed image + frame */}
-      <div className="hero-img">
-        <img src={myImage} alt="Developer" className="profile-img" />
-        <span className="img-frame"></span>
+        <div className="hero-img">
+          <img src={myImage} alt="Developer" className="profile-img" />
+          <span className="img-frame"></span>
+        </div>
       </div>
     </section>
   );

@@ -121,3 +121,39 @@
   font-size: 1.1rem;
   line-height: 2;
 }
+/* ---------- Responsive (Mobile View) ---------- */
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 30px 10px;
+  }
+
+  .skills-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* exactly 2 per row */
+    gap: 15px;
+    justify-items: center;
+  }
+
+  .flip-card {
+    width: 120px;   /* smaller */
+    height: 120px;  /* smaller */
+  }
+
+  .flip-card-front .skill-icon {
+    font-size: 1.5rem;
+  }
+
+  .flip-card-front h3 {
+    font-size: 0.9rem;
+  }
+
+  .flip-card-back ul {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+}
