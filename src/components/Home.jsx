@@ -12,23 +12,28 @@ const Home = () => {
 
   useEffect(() => {
     const currentTitle = titles[index];
-    let typingSpeed = isDeleting ? 50 : 80;
+    const typingSpeed = isDeleting ? 50 : 100;
 
     const timeout = setTimeout(() => {
       if (!isDeleting) {
+        // Typing
         setDisplayText(currentTitle.substring(0, charIndex + 1));
-        setCharIndex((prev) => prev + 1);
+        setCharIndex(prev => prev + 1);
 
         if (charIndex + 1 === currentTitle.length) {
+          // Pause at full word before deleting
           setTimeout(() => setIsDeleting(true), 1500);
         }
       } else {
+        // Deleting
         setDisplayText(currentTitle.substring(0, charIndex - 1));
-        setCharIndex((prev) => prev - 1);
+        setCharIndex(prev => prev - 1);
 
-        if (charIndex - 1 === 0) {
+        if (charIndex - 1 <= 0) {
+          // Reset for next word
           setIsDeleting(false);
-          setIndex((prev) => (prev + 1) % titles.length);
+          setIndex(prev => (prev + 1) % titles.length);
+          setCharIndex(0);
         }
       }
     }, typingSpeed);
@@ -38,16 +43,20 @@ const Home = () => {
 
   return (
     <section className="home">
-      {/* Wrap intro + image in a container for proper mobile stacking */}
       <div className="home-container">
         <div className="intro">
           <h1>Hi, I'm <span>Devesh Chaudhari</span></h1>
+
+          {/* Typing subtitle */}
           <p className="subtitle typing">
-            {displayText}<span className="cursor">|</span>
+            {displayText}
+            <span className="cursor">|</span>
           </p>
+
           <p className="tagline">
             Passionate about building modern web applications with MERN Stack.
           </p>
+
           <div className="buttons">
             <a href={resumeFile} target="_blank" rel="noopener noreferrer" className="btn">
               Download Resume

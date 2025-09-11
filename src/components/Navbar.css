@@ -4,6 +4,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 48px;
+   width: 100%;           /* full width */
+  overflow-x: hidden;
   background: linear-gradient(90deg, #1e3c72, #2a5298);
   color: #ffffff;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -233,10 +235,58 @@
 }
 /* Existing navbar styles remain */
 
-/* 🔹 Hide navbar completely on mobile when scrolling past Home */
+/* 🔹 Hide navbar smoothly on mobile when scrolling past Home */
 @media (max-width: 768px) {
   .navbar.hide-mobile {
-    display: none;
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .navbar {
+    transition: opacity 0.4s ease, transform 0.4s ease;
   }
 }
 
+/* 🔹 Mobile Navbar Styles */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px; /* smaller padding for mobile */
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;  /* stack links vertically */
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 60px;  /* just below navbar */
+    left: 0;
+    width: 100%;  /* full width */
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    padding: 20px 0;
+    gap: 15px; /* spacing between links */
+    transform: translateY(-200%); /* hidden by default */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* 🔹 When menu is open */
+  .nav-links.active {
+    transform: translateY(0); /* slide down */
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block; /* show hamburger icon */
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: #fff;
+  }
+}
