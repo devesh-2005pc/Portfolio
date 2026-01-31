@@ -1,5 +1,12 @@
 import React from "react";
-import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 import "./Footer.css";
 
 const Footer = () => {
@@ -11,30 +18,48 @@ const Footer = () => {
         <div className="footer-left">
           <h2 className="footer-name">Devesh Chaudhari</h2>
           <p className="footer-about">
-          A passionate developer & life-long learner<br />
-          building ideas into reality.
-
+            A passionate developer & life-long learner <br />
+            building ideas into reality.
           </p>
+
           <div className="footer-icons">
-            <a 
-              href="https://www.linkedin.com/in/devesh-chaudhari-246180314?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/in/devesh-chaudhari-246180314?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank"
               rel="noreferrer"
             >
               <FaLinkedin />
             </a>
-            <a href="https://github.com/devesh-2005pc" target="_blank" rel="noreferrer">
+
+            <a
+              href="https://github.com/devesh-2005pc"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaGithub />
             </a>
+
+            {/* LeetCode */}
+            <a
+              href="https://leetcode.com/u/Devesh_pc/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LeetCode Profile"
+            >
+              <SiLeetcode />
+            </a>
+
             <a href="mailto:deveshpc25@gmail.com">
               <FaEnvelope />
             </a>
+
             <a href="tel:+918850195288">
               <FaPhone />
             </a>
-            <a 
-              href="https://maps.google.com/?q=Kalyan,Thane" 
-              target="_blank" 
+
+            <a
+              href="https://maps.google.com/?q=Kalyan,Thane"
+              target="_blank"
               rel="noreferrer"
             >
               <FaMapMarkerAlt />
@@ -50,6 +75,8 @@ const Footer = () => {
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+                <li><a href="#milestone">Milestones</a></li>
+
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>

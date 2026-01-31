@@ -64,6 +64,8 @@ const Home = () => {
             <a href="#contact" className="btn secondary">Let's Talk</a>
           </div>
         </div>
+        <div class="twinkle-overlay"></div>
+
 
         <div className="hero-img">
           <img src={myImage} alt="Developer" className="profile-img" />

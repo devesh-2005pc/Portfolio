@@ -2,14 +2,24 @@ import React, { useState } from "react";
 import "./Project.css";
 
 // Import your screenshots
+import tsecImg from "../assets/TSEC.png";
 import lamboImg from "../assets/lambo.png.png";
 import wellnessImg from "../assets/wellness.png.png";
-import currencyImg from "../assets/currency.png.png";
 
 // Projects data with description
 const project = [
   {
     id: 1,
+    name: "TSEC FOOD RECIPE",
+    description:
+      "A frontend hackathon project built for TSEC, showcasing a modern food recipe platform with clean UI, smooth navigation, and responsive design.",
+    stack: "React, CSS, Frontend UI",
+    code: "https://github.com/devesh-2005pc/TSEC_Receipe-tut.git",
+    live: "https://tsec-receipe-tut.vercel.app/",
+    image: tsecImg,
+  },
+  {
+    id: 2,
     name: "CAR WEB",
     description:
       "A Lamborghini-inspired showcase website with smooth animations, immersive UI, and sound effects.",
@@ -19,7 +29,7 @@ const project = [
     image: lamboImg,
   },
   {
-    id: 2,
+    id: 3,
     name: "WELLNESS HUB",
     description:
       "A secure wellness session platform with JWT authentication, session drafting, publishing, and charts.",
@@ -27,16 +37,6 @@ const project = [
     code: "https://github.com/devesh-2005pc/wellness_platform_app",
     live: "https://wellness-taupe.vercel.app/",
     image: wellnessImg,
-  },
-  {
-    id: 3,
-    name: "CURRENCY CONVERTER",
-    description:
-      "A real-time currency converter that fetches live exchange rates using APIs and provides smooth UI.",
-    stack: "React, API, CSS",
-    code: "https://github.com/devesh-2005pc/Currency-Converter",
-    live: "https://currency-converter-flax-kappa.vercel.app/",
-    image: currencyImg,
   },
 ];
 
@@ -46,7 +46,7 @@ const Project = () => {
   return (
     <section className="projects-section" id="projects">
       <h2 className="projects-title">My Projects</h2>
-      <p className="projects-subtitle"> A showcase of my recent works </p>
+      <p className="projects-subtitle">A showcase of my recent works</p>
 
       <div className="projects-container">
         {/* Left side list */}
@@ -59,7 +59,6 @@ const Project = () => {
               }`}
               onMouseEnter={() => setActive(proj)}
             >
-              {/* Project Name as Link */}
               <a
                 href={proj.live}
                 target="_blank"
@@ -73,6 +72,7 @@ const Project = () => {
               <p className="project-tech">
                 <strong>Tech:</strong> {proj.stack}
               </p>
+
               <div className="project-links">
                 <a href={proj.code} target="_blank" rel="noreferrer">
                   <span>Get Code</span>
@@ -85,7 +85,7 @@ const Project = () => {
           ))}
         </div>
 
-        {/* Right side preview (Image as Link) */}
+        {/* Right side preview */}
         <div className="project-preview">
           <a href={active.live} target="_blank" rel="noreferrer">
             <img

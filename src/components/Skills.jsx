@@ -1,6 +1,6 @@
 import React from 'react';
 import './Skills.css';
-import { FaCode, FaLaptopCode, FaDatabase, FaTools } from 'react-icons/fa';
+import { FaCode, FaLaptopCode, FaDatabase, FaTools, FaBrain } from 'react-icons/fa';
 import {
   SiC,
   SiPython,
@@ -16,11 +16,13 @@ import {
   SiGit,
   SiGithub,
   SiCanva,
+  SiFlask,
+  SiScikitlearn,
 } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
-import { VscVscode } from 'react-icons/vsc'; // ✅ For VS Code
-import { SiAuth0 } from 'react-icons/si'; // ✅ Close alternative for JWT
-import { SiSocketdotio } from 'react-icons/si'; // ✅ Socket.io exists
+import { VscVscode } from 'react-icons/vsc';
+import { SiAuth0 } from 'react-icons/si';
+import { SiSocketdotio } from 'react-icons/si';
 
 const Skills = () => {
   return (
@@ -28,7 +30,7 @@ const Skills = () => {
       <h2><span>My</span> Skills</h2>
       <div className="skills-container">
 
-        {/* Languages Card */}
+        {/* Languages */}
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
@@ -45,7 +47,7 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* Frontend Development Card */}
+        {/* Frontend */}
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
@@ -63,7 +65,7 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* Backend Development Card */}
+        {/* Backend */}
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
@@ -74,14 +76,15 @@ const Skills = () => {
               <ul>
                 <li><SiNodedotjs /> Node.js</li>
                 <li><SiExpress /> Express.js</li>
-                <li><SiAuth0 /> JWT</li> {/* Using Auth0 logo for JWT */}
+                <li><SiFlask /> Flask</li>
+                <li><SiAuth0 /> JWT</li>
                 <li><SiSocketdotio /> Socket.io</li>
               </ul>
             </div>
           </div>
         </div>
 
-        {/* Database Card */}
+        {/* Databases */}
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
@@ -98,7 +101,25 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* Tools Card */}
+        {/* Machine Learning */}
+        <div className="flip-card">
+          <div className="flip-card-inner">
+            <div className="flip-card-front">
+              <FaBrain className="skill-icon" />
+              <h3>Machine Learning</h3>
+            </div>
+            <div className="flip-card-back">
+              <ul>
+                <li><SiScikitlearn /> Scikit-learn</li>
+                <li><SiPython /> ML with Python</li>
+                <li>Data Preprocessing</li>
+                <li>Model Training & Evaluation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Tools */}
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">

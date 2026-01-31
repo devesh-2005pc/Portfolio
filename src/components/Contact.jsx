@@ -53,7 +53,7 @@ const Contact = () => {
 
           <div className="info-box">
             <MdEmail className="info-icon" />
-            <a href="mailto:deveshpc2005@gmail.com">deveshpc2005@gmail.com</a>
+            <a href="mailto:deveshpc2005k@gmail.com">deveshpc2005k@gmail.com</a>
           </div>
 
           <div className="info-box">

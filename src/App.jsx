@@ -10,6 +10,7 @@ import Education from './components/Education';
 import ThemeToggle from './components/ThemeToggle';
 import { ThemeProvider } from './ThemeContext.jsx'; // ✅ Theme context wrapper
 import Footer from './components/Footer';
+import Milestone from "./components/Milestone.jsx";
 
 function App() {
   return (
@@ -17,30 +18,38 @@ function App() {
       <div className="App">
         <Navbar />
 
-        <main>
-          <section id="home">
-            <Home />
-          </section>
-          <section id="about">
-            <Aboutme />
-          </section>
-          <section id="education">
-            <Education />
-              <section id="skills">
-            <Skills />
-          </section>
-          <section id="project">
-            <Project />
-          </section>
-         
-          </section>
-          <section id="contact">
-            <Contact />
-          </section>
-          <section id="footer">
-            <Footer/>
-          </section>
-        </main>
+  <main>
+  <section id="home">
+    <Home />
+  </section>
+
+  <section id="about">
+    <Aboutme />
+  </section>
+
+  <section id="education">
+    <Education />
+  </section>
+
+  <section id="skills">
+    <Skills />
+  </section>
+
+  <section id="project">
+    <Project />
+  </section>
+
+  <section id="milestone">
+    <Milestone />
+  </section>
+
+  <section id="contact">
+    <Contact />
+  </section>
+
+  <Footer />
+</main>
+
       </div>
     </ThemeProvider>
   );
