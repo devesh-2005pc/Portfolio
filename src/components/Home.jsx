@@ -4,7 +4,7 @@ import resumeFile from '../assets/Resume.Devesh.1.pdf';
 import './Home.css';
 
 const Home = () => {
-  const titles = ['Computer Engineering Student', 'Full Stack Developer'];
+  const titles = ['Computer Engineering Student', 'Full Stack Developer','Machine Learning Enthusiast'];
   const [index, setIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [charIndex, setCharIndex] = useState(0);
