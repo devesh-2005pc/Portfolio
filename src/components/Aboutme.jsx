@@ -2,38 +2,63 @@ import React from 'react';
 import './Aboutme.css';
 import aboutPic from '../assets/aboutme.jpg';
 import useReveal from "../hooks/useReveal";
+import RobotAbout from "../components/RobotAbout";
 
 const AboutMe = () => {
-  useReveal(); // 👈 apply scroll animation everywhere
+  useReveal();
 
   return (
     <div className="about-wrapper">
-      {/* Floating blobs */}
       <div className="blob blob-1"></div>
       <div className="blob blob-2"></div>
 
       <div className="about">
         <div className="about-content">
-          {/* Left Side - Image */}
-          <div className="about-image">
-            <img src={aboutPic} alt="About section" />
+
+          {/* LEFT COLUMN */}
+          <div className="about-left">
+            <div className="about-image">
+              <img src={aboutPic} alt="About section" />
+            </div>
           </div>
 
-          {/* Right Side - Text */}
+          {/* RIGHT COLUMN */}
           <div className="about-text">
-            <h1>Devesh Chaudhari</h1>
-            <h2>Aspiring Full-Stack Developer</h2>
+
+            {/* Name + Robot Row */}
+            <div className="name-row">
+              <h1>Devesh Chaudhari</h1>
+              <div className="robot-inline">
+                <RobotAbout />
+              </div>
+            </div>
+
+            <h2>Full-Stack Developer </h2>
+
             <p>
-              I’m <strong>Devesh Chaudhari</strong>, a passionate Computer Engineering student at
-              <strong> Datta Meghe College of Engineering</strong>, with a strong passion for technology and innovation.
+              I am <strong>Devesh Chaudhari</strong>, a Computer Engineering student at 
+              <strong> Datta Meghe College of Engineering</strong>, passionate about building scalable, efficient, and impactful digital solutions.
               <br /><br />
-I specialize in <strong> Full Stack Development </strong>, where I design and build responsive, user-friendly, and scalable web applications using modern technologies like React.js, Node.js, Express, and MongoDB. Alongside this, I have recently begun my <strong> Machine Learning journey</strong>, where I am exploring the fascinating world of data-driven solutions and AI-powered applications in a structured and professional manner.             <br /><br />
-             
-             
-As part of my academic journey, my team and I secured <strong>3rd place </strong> in our college Mini Project Competition, organized by CSI CATT DMCE , a milestone that strengthened my problem-solving mindset, teamwork, and hands-on technical expertise.              <br /><br />
-              I’m aI truly believe in being a <strong>lifelong learner</strong>, constantly experimenting, innovating, and building solutions that make an impact. With a collaborative spirit, I look forward to working together with professionals and teams to create something<strong> unique, meaningful, and future-ready</strong>. <br /><br />
-              <strong>Let’s build something awesome together!</strong>
+
+              I have a strong foundation in programming languages including 
+              <strong> C, Python and Java</strong>, along with hands-on experience in 
+              <strong> Full Stack Development using the MERN stack (MongoDB, Express.js, React.js, Node.js)</strong>. 
+              I enjoy developing responsive user interfaces, secure REST APIs, and performance-optimized web applications.
+              <br /><br />
+
+              Alongside web development, I am exploring 
+              <strong> Machine Learning and Artificial Intelligence</strong>, working with data-driven approaches to build intelligent and practical solutions.
+              <br /><br />
+
+              My team secured <strong>3rd place</strong> in the CSI CATT DMCE Mini Project Competition, reflecting my ability to collaborate, innovate, and deliver results.
+              <br /><br />
+
+              I am always eager to learn, adapt to new technologies, and contribute to real-world software development projects.
+              <br /><br />
+
+              <strong>Let’s build something meaningful and impactful together.</strong>
             </p>
+
           </div>
         </div>
       </div>
