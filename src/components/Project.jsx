@@ -2,14 +2,24 @@ import React, { useState } from "react";
 import "./Project.css";
 
 // Import your screenshots
+import ToggleNest from "../assets/ToggleNest.png";
 import tsecImg from "../assets/TSEC.png";
 import lamboImg from "../assets/lambo.png.png";
-import wellnessImg from "../assets/wellness.png.png";
 
-// Projects data with description
+// Updated Projects data
 const project = [
   {
     id: 1,
+    name: "TOGGLENEST",
+    description:
+      "A full-stack productivity web application built with the MERN stack, featuring secure authentication, dynamic task management, and seamless deployment. ToggleNest offers an intuitive user experience with optimized backend performance and real-time data handling.",
+    stack: "MERN Stack, JWT, REST APIs, Deployment",
+    code: "https://github.com/omii88/ToggleNest2.git", // put your actual repo if needed
+    live: "https://togglenest.netlify.app/",
+    image: ToggleNest,
+  },
+  {
+    id: 2,
     name: "TSEC FOOD RECIPE",
     description:
       "A frontend hackathon project built for TSEC, showcasing a modern food recipe platform with clean UI, smooth navigation, and responsive design.",
@@ -19,24 +29,14 @@ const project = [
     image: tsecImg,
   },
   {
-    id: 2,
+    id: 3,
     name: "CAR WEB",
     description:
-      "A Lamborghini-inspired showcase website with smooth animations, immersive UI, and sound effects.",
+      "A Lamborghini-inspired showcase website with smooth animations, immersive UI, and premium visual interactions.",
     stack: "React, CSS, Animations",
     code: "https://github.com/devesh-2005pc/Lambo_web",
     live: "https://lambo-web-eight.vercel.app/",
     image: lamboImg,
-  },
-  {
-    id: 3,
-    name: "WELLNESS HUB",
-    description:
-      "A secure wellness session platform with JWT authentication, session drafting, publishing, and charts.",
-    stack: "MERN, JWT, Charts",
-    code: "https://github.com/devesh-2005pc/wellness_platform_app",
-    live: "https://wellness-taupe.vercel.app/",
-    image: wellnessImg,
   },
 ];
 
