@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import myImage from '../assets/deveshimage.jpg';
-import resumeFile from '../assets/Resume.Devesh.1.pdf';
+import resumeFile from '../assets/DEVESHresumeLATEST.pdf';
 import './Home.css';
 
 const Home = () => {
