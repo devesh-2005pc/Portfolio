@@ -1,7 +1,9 @@
 🚀 Devesh Chaudhari – Full Stack & Machine Learning Developer Portfolio
 📌 Overview
 
-This is my personal Full Stack Developer portfolio built to showcase my technical expertise in scalable web application development and Machine Learning integration. The portfolio demonstrates modern frontend engineering using Vite and React, robust backend architecture using the MERN stack, and practical implementation of data-driven intelligent systems.
+This is my personal Full Stack Developer portfolio built to showcase my technical expertise in scalable web application development and Machine Learning integration.
+
+The portfolio demonstrates modern frontend engineering using Vite and React, robust backend architecture using the MERN stack, and practical implementation of data-driven intelligent systems.
 
 Designed with a strong focus on performance optimization, responsive UI/UX, clean architecture, and real-world problem-solving, this portfolio reflects my ability to build end-to-end applications — from intuitive user interfaces to backend APIs and ML-powered prediction systems.
 
@@ -81,7 +83,6 @@ Integrate Machine Learning models into web applications
 Solve real-world problems using data-driven approaches
 
 Follow professional development and deployment standards
-
 
 📬 Contact
 
