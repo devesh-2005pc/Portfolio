@@ -1,12 +1,97 @@
-# React + Vite
+🚀 Devesh Chaudhari – Full Stack & Machine Learning Developer Portfolio
+📌 Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal Full Stack Developer portfolio built to showcase my technical expertise in scalable web application development and Machine Learning integration. The portfolio demonstrates modern frontend engineering using Vite and React, robust backend architecture using the MERN stack, and practical implementation of data-driven intelligent systems.
 
-Currently, two official plugins are available:
+Designed with a strong focus on performance optimization, responsive UI/UX, clean architecture, and real-world problem-solving, this portfolio reflects my ability to build end-to-end applications — from intuitive user interfaces to backend APIs and ML-powered prediction systems.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🛠 Tech Stack
+💻 Frontend
 
-## Expanding the ESLint configuration
+React.js (Vite)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+JavaScript (ES6+)
+
+Responsive CSS
+
+Modern UI/UX Principles
+
+🗄 Backend
+
+Node.js
+
+Express.js
+
+MongoDB
+
+RESTful API Development
+
+🤖 Machine Learning
+
+Python
+
+Scikit-learn
+
+Model Training & Evaluation
+
+Data Preprocessing
+
+Predictive Analytics
+
+Flask API Integration
+
+⚙ Tools & Deployment
+
+Git & GitHub
+
+Vercel / Render
+
+API Integration
+
+Environment Configuration
+
+⚡ Key Highlights
+
+Modern and fully responsive UI/UX design
+
+Performance-optimized React (Vite) architecture
+
+Scalable MERN stack development
+
+REST API integration and backend connectivity
+
+Machine Learning model development and deployment
+
+Clean, modular, and maintainable code structure
+
+Production-ready project implementation
+
+🎯 What This Portfolio Demonstrates
+
+This portfolio reflects my ability to:
+
+Build scalable full-stack web applications
+
+Design clean and intuitive frontend interfaces
+
+Develop structured and secure backend systems
+
+Integrate Machine Learning models into web applications
+
+Solve real-world problems using data-driven approaches
+
+Follow professional development and deployment standards
+
+
+📬 Contact
+
+Devesh Chaudhari
+Full Stack & Machine Learning Developer
+
+📧 deveshpc2005k@gmail.com
+
+📱 8850195288
+
+⭐ Final Note
+
+This portfolio represents my commitment to building scalable web applications and intelligent systems by combining modern full-stack development with Machine Learning solutions.
