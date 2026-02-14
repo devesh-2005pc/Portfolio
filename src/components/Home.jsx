@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import myImage from '../assets/deveshimage.jpg';
+import myImage from '../assets/deveshimage.jpeg';
 import resumeFile from '../assets/DEVESHresumeLATEST.pdf';
 import './Home.css';
 
