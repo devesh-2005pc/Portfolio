@@ -1,46 +1,60 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import "./Project.css";
 
 // Import your screenshots
 import ToggleNest from "../assets/ToggleNest.png";
-import tsecImg from "../assets/TSEC.png";
 import lamboImg from "../assets/lambo.png.png";
+import DevMentorImg from "../assets/devmentor.png";
+import BurnoutImg from "../assets/burnout.png";
 
 // Updated Projects data
 const project = [
   {
     id: 1,
+    name: "DEVMENTOR AI",
+    description:
+      "An AI-powered career development platform that analyzes resumes, evaluates GitHub profiles, generates personalized learning roadmaps, recommends projects, and provides AI-assisted career guidance.",
+    stack:
+      "React.js, Node.js, Express.js, MongoDB, JWT, Gemini API, GitHub API",
+    code: "https://github.com/devesh-2005pc/DevMentor.git", // replace with exact repo
+    live: "https://dev-mentor-chi.vercel.app/",
+    image: DevMentorImg,
+  },
+  {
+    id: 2,
     name: "TOGGLENEST",
     description:
-      "A full-stack productivity web application built with the MERN stack, featuring secure authentication, dynamic task management, and seamless deployment. ToggleNest offers an intuitive user experience with optimized backend performance and real-time data handling.",
-    stack: "MERN Stack, JWT, REST APIs, Deployment",
-    code: "https://github.com/omii88/ToggleNest2.git", // put your actual repo if needed
+      "A full-stack MERN productivity platform featuring secure authentication, responsive dashboards, REST APIs, and efficient MongoDB integration. Developed in a collaborative team environment during internship.",
+    stack: "React.js, Node.js, Express.js, MongoDB, JWT, REST APIs",
+    code: "https://github.com/omii88/ToggleNest2.git",
     live: "https://togglenest.netlify.app/",
     image: ToggleNest,
   },
   {
-    id: 2,
-    name: "TSEC FOOD RECIPE",
+    id: 3,
+    name: "WORKLOAD BURNOUT PREDICTION",
     description:
-      "A frontend hackathon project built for TSEC, showcasing a modern food recipe platform with clean UI, smooth navigation, and responsive design.",
-    stack: "React, CSS, Frontend UI",
-    code: "https://github.com/devesh-2005pc/TSEC_Receipe-tut.git",
-    live: "https://tsec-receipe-tut.vercel.app/",
-    image: tsecImg,
+      "An AI-powered system that predicts employee burnout risk using machine learning models. Features an interactive dashboard for data input, prediction, and workforce wellness insights.",
+    stack:
+      "React.js, Flask, Python, Machine Learning, Random Forest, Scikit-learn",
+    code: "https://github.com/devesh-2005pc/workload-burnout.git", // replace with exact repo
+    live: "https://workload-burnout.vercel.app/",
+    image: BurnoutImg,
   },
   {
-    id: 3,
-    name: "CAR WEB",
+    id: 4,
+    name: "LAMBORGHINI WEB EXPERIENCE",
     description:
-      "A Lamborghini-inspired showcase website with smooth animations, immersive UI, and premium visual interactions.",
-    stack: "React, CSS, Animations",
+      "A premium automotive-inspired frontend experience showcasing advanced UI/UX design, smooth animations, immersive interactions, and responsive layouts.",
+    stack:
+      "React.js, Vite, CSS, GSAP, ScrollTrigger, Framer Motion",
     code: "https://github.com/devesh-2005pc/Lambo_web",
     live: "https://lambo-web-eight.vercel.app/",
     image: lamboImg,
   },
 ];
 
-const Project = () => {
+const Project = memo(() => {
   const [active, setActive] = useState(project[0]);
 
   return (
@@ -54,9 +68,8 @@ const Project = () => {
           {project.map((proj) => (
             <div
               key={proj.id}
-              className={`project-item ${
-                active.id === proj.id ? "active" : ""
-              }`}
+              className={`project-item ${active.id === proj.id ? "active" : ""
+                }`}
               onMouseEnter={() => setActive(proj)}
             >
               <a
@@ -93,12 +106,13 @@ const Project = () => {
               src={active.image}
               alt={active.name}
               className="fade-in"
+              loading="lazy"
             />
           </a>
         </div>
       </div>
     </section>
   );
-};
+});
 
 export default Project;

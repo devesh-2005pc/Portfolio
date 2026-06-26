@@ -38,7 +38,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior is handled dynamically by Lenis */
 }
 
 /* Light Theme */

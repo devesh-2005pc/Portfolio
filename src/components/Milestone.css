@@ -199,10 +199,10 @@
 .scroll-dot {
   position: absolute;
   left: 50%;
-  top: 0; /* JS will move via transform translateY */
+  top: 0; /* JS will move via transform translate3d */
   width: 22px;
   height: 22px;
-  transform: translate(-50%, 0);
+  transform: translate3d(-50%, 0, 0);
   background: var(--dot-bg);
   border-radius: 999px;
   z-index: 3;
@@ -212,12 +212,13 @@
     0 0 80px var(--dot-glow-3);
   border: 2px solid var(--dot-border);
   pointer-events: none;
-  transition: transform 0.16s ease-out;
+  /* Removed CSS transition on transform to avoid conflict with RAF loop */
+  will-change: transform;
 }
 
 /* “hovered” state when dot aligns with a card */
 .milestone-card.is-active {
-  transform: translateY(-10px) scale(1.01);
+  transform: translate3d(0, -10px, 0) scale(1.01);
   box-shadow:
     0 22px 80px rgba(0, 0, 0, 0.75),
     0 0 0 1px rgba(59, 130, 246, 0.4) inset;
@@ -303,7 +304,7 @@
 
 /* subtle hover even without active dot */
 .milestone-card:hover {
-  transform: translateY(-6px);
+  transform: translate3d(0, -6px, 0);
   box-shadow:
     0 20px 65px rgba(0, 0, 0, 0.75),
     0 0 0 1px rgba(156, 163, 175, 0.65) inset;

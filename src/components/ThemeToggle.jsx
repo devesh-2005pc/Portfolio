@@ -1,23 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './ThemeToggle.css';
+import { useTheme } from '../ThemeContext.jsx';
 
 const ThemeToggle = () => {
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem('theme') === 'dark';
-  });
-
-  useEffect(() => {
-    const body = document.body;
-
-    // 🔁 Always remove both before setting
-  body.classList.remove('dark', 'light', 'dark-theme', 'light-theme');
-
-    // ✅ Add correct class based on state
-    body.classList.add(darkMode ? 'dark' : 'light');
-
-    // 💾 Save preference
-    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
-  }, [darkMode]);
+  const { darkMode, toggleTheme } = useTheme();
 
   return (
     <div className="theme-toggle">
@@ -25,7 +11,7 @@ const ThemeToggle = () => {
         <input
           type="checkbox"
           checked={darkMode}
-          onChange={() => setDarkMode(!darkMode)}
+          onChange={toggleTheme}
         />
         <span className="slider"></span>
       </label>

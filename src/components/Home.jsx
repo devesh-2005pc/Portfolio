@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import myImage from '../assets/deveshimage.jpeg';
-import resumeFile from '../assets/DEVESHresumeLATEST.pdf';
-import './Home.css';
+import React, { useState, useEffect } from "react";
+import myImage from "../assets/deveshimage.jpeg";
+import resumeFile from "../assets/DEVESH_Resume_combine.pdf";
+import "./Home.css";
 
-const Home = () => {
-  const titles = ['Computer Engineering Student', 'Full Stack Developer','Machine Learning Enthusiast'];
+const titles = [
+  "Computer Engineering Student",
+  "Full Stack Developer",
+  "Machine Learning Enthusiast",
+];
+
+const TypingText = React.memo(() => {
   const [index, setIndex] = useState(0);
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState("");
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -18,7 +23,7 @@ const Home = () => {
       if (!isDeleting) {
         // Typing
         setDisplayText(currentTitle.substring(0, charIndex + 1));
-        setCharIndex(prev => prev + 1);
+        setCharIndex((prev) => prev + 1);
 
         if (charIndex + 1 === currentTitle.length) {
           // Pause at full word before deleting
@@ -27,12 +32,12 @@ const Home = () => {
       } else {
         // Deleting
         setDisplayText(currentTitle.substring(0, charIndex - 1));
-        setCharIndex(prev => prev - 1);
+        setCharIndex((prev) => prev - 1);
 
         if (charIndex - 1 <= 0) {
           // Reset for next word
           setIsDeleting(false);
-          setIndex(prev => (prev + 1) % titles.length);
+          setIndex((prev) => (prev + 1) % titles.length);
           setCharIndex(0);
         }
       }
@@ -42,30 +47,44 @@ const Home = () => {
   }, [charIndex, isDeleting, index]);
 
   return (
+    <p className="subtitle typing">
+      {displayText}
+      <span className="cursor">|</span>
+    </p>
+  );
+});
+
+const Home = () => {
+  return (
     <section className="home">
       <div className="home-container">
         <div className="intro">
-          <h1>Hi, I'm <span>Devesh Chaudhari</span></h1>
+          <h1>
+            Hi, I'm <span>Devesh Chaudhari</span>
+          </h1>
 
           {/* Typing subtitle */}
-          <p className="subtitle typing">
-            {displayText}
-            <span className="cursor">|</span>
-          </p>
+          <TypingText />
 
           <p className="tagline">
             Passionate about building modern web applications with MERN Stack.
           </p>
 
           <div className="buttons">
-            <a href={resumeFile} target="_blank" rel="noopener noreferrer" className="btn">
+            <a
+              href={resumeFile}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn"
+            >
               Download Resume
             </a>
-            <a href="#contact" className="btn secondary">Let's Talk</a>
+            <a href="#contact" className="btn secondary">
+              Let's Talk
+            </a>
           </div>
         </div>
         <div class="twinkle-overlay"></div>
-
 
         <div className="hero-img">
           <img src={myImage} alt="Developer" className="profile-img" />

@@ -1,13 +1,12 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import * as THREE from "three";
 
-function RobotModel() {
+function RobotModel({ hovered, setHovered }) {
   const { scene } = useGLTF("/models/robot.glb");
   const robotRef = useRef();
   const { mouse } = useThree();
-  const [hovered, setHovered] = useState(false);
 
   useFrame(() => {
     if (!robotRef.current) return;
@@ -60,13 +59,36 @@ function RobotModel() {
 }
 
 export default function RobotAbout() {
+  const containerRef = useRef();
+  const [isVisible, setIsVisible] = useState(false);
+  const [hovered, setHovered] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.05 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <div className="robot-card">
-      <Canvas camera={{ position: [0, 1, 4], fov: 50 }}>
-        <ambientLight intensity={1.2} />
-        <directionalLight position={[3, 5, 5]} intensity={2.5} />
-        <RobotModel />
-      </Canvas>
+    <div className="robot-card" ref={containerRef}>
+      {isVisible && (
+        <Canvas camera={{ position: [0, 1, 4], fov: 50 }}>
+          <ambientLight intensity={1.2} />
+          <directionalLight position={[3, 5, 5]} intensity={2.5} />
+          <RobotModel hovered={hovered} setHovered={setHovered} />
+        </Canvas>
+      )}
     </div>
   );
 }

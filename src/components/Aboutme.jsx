@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import './Aboutme.css';
 import aboutPic from '../assets/aboutme.jpg';
 import useReveal from "../hooks/useReveal";
-import RobotAbout from "../components/RobotAbout";
+
+const RobotAbout = lazy(() => import("../components/RobotAbout"));
 
 const AboutMe = () => {
   useReveal();
@@ -18,7 +19,7 @@ const AboutMe = () => {
           {/* LEFT COLUMN */}
           <div className="about-left">
             <div className="about-image">
-              <img src={aboutPic} alt="About section" />
+              <img src={aboutPic} alt="About section" loading="lazy" />
             </div>
           </div>
 
@@ -29,7 +30,9 @@ const AboutMe = () => {
             <div className="name-row">
               <h1>Devesh Chaudhari</h1>
               <div className="robot-inline">
-                <RobotAbout />
+                <Suspense fallback={<div className="robot-placeholder" />}>
+                  <RobotAbout />
+                </Suspense>
               </div>
             </div>
 

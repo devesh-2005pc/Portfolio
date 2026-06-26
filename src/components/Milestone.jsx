@@ -89,6 +89,7 @@ const ImageSlider = ({ images }) => {
         alt="Milestone"
         className="ms-image"
         key={index}
+        loading="lazy"
       />
 
       {images.length > 1 && (
@@ -125,18 +126,38 @@ const Milestone = () => {
     let targetY = 0;
     let currentY = 0;
     let rafId;
+    let sectionTop = 0;
+    let sectionHeight = 0;
+    let lineHeight = 0;
+    let cardCenters = [];
 
     const lerp = (a, b, n) => a + (b - a) * n;
 
-    const calculateTarget = () => {
+    // Cache layout metrics to avoid DOM reads on scroll/animation frames
+    const cacheLayout = () => {
       const sectionRect = section.getBoundingClientRect();
-      const sectionTop = sectionRect.top + window.scrollY;
-      const sectionBottom = sectionTop + sectionRect.height;
+      sectionTop = sectionRect.top + window.scrollY;
+      sectionHeight = sectionRect.height;
+      lineHeight = line.offsetHeight;
 
+      const lineRect = line.getBoundingClientRect();
+      const lineTopRelativeToDocument = lineRect.top + window.scrollY;
+      const cards = section.querySelectorAll(".milestone-card");
+
+      cardCenters = Array.from(cards).map((card) => {
+        const cardRect = card.getBoundingClientRect();
+        const cardCenterRelativeToDocument = cardRect.top + window.scrollY + cardRect.height / 2;
+        return {
+          element: card,
+          centerY: cardCenterRelativeToDocument - lineTopRelativeToDocument,
+        };
+      });
+    };
+
+    const calculateTarget = () => {
       const viewTop = window.scrollY;
       const viewBottom = viewTop + window.innerHeight;
-
-      const lineHeight = line.offsetHeight;
+      const sectionBottom = sectionTop + sectionHeight;
 
       // before section
       if (viewBottom <= sectionTop) {
@@ -150,13 +171,9 @@ const Milestone = () => {
         return;
       }
 
-      const scrollRange =
-        sectionBottom - sectionTop - window.innerHeight;
+      const scrollRange = sectionBottom - sectionTop - window.innerHeight;
       const scrolled = viewTop - sectionTop;
-
-      const raw =
-        scrollRange > 0 ? scrolled / scrollRange : 0;
-
+      const raw = scrollRange > 0 ? scrolled / scrollRange : 0;
       const progress = Math.max(0, Math.min(1, raw));
 
       targetY = progress * lineHeight;
@@ -165,40 +182,47 @@ const Milestone = () => {
     const animate = () => {
       // smooth dot move
       currentY = lerp(currentY, targetY, 0.15);
-      dot.style.transform = `translate(-50%, ${currentY}px)`;
+      dot.style.transform = `translate3d(-50%, ${currentY}px, 0)`;
 
-      // find closest card to dot
-      const dotY = line.getBoundingClientRect().top + currentY;
-      const cards = section.querySelectorAll(".milestone-card");
-      let closest = null;
+      // find closest card to dot in memory (no DOM layout querying)
+      let closestCard = null;
       let minDist = Infinity;
 
-      cards.forEach((card) => {
-        const r = card.getBoundingClientRect();
-        const center = r.top + r.height / 2;
-        const d = Math.abs(center - dotY);
+      cardCenters.forEach((cardObj) => {
+        const d = Math.abs(cardObj.centerY - currentY);
         if (d < minDist) {
           minDist = d;
-          closest = card;
+          closestCard = cardObj.element;
         }
       });
 
-      cards.forEach((c) => c.classList.remove("is-active"));
-      if (closest) closest.classList.add("is-active");
+      // Update classes only when active card changes
+      if (closestCard && !closestCard.classList.contains("is-active")) {
+        const cards = section.querySelectorAll(".milestone-card");
+        cards.forEach((c) => {
+          if (c === closestCard) {
+            c.classList.add("is-active");
+          } else {
+            c.classList.remove("is-active");
+          }
+        });
+      }
 
       rafId = requestAnimationFrame(animate);
     };
 
+    // Initialize layout measurements
+    cacheLayout();
     calculateTarget();
     animate();
 
     window.addEventListener("scroll", calculateTarget, { passive: true });
-    window.addEventListener("resize", calculateTarget);
+    window.addEventListener("resize", cacheLayout, { passive: true });
 
     return () => {
       cancelAnimationFrame(rafId);
       window.removeEventListener("scroll", calculateTarget);
-      window.removeEventListener("resize", calculateTarget);
+      window.removeEventListener("resize", cacheLayout);
     };
   }, []);
 

@@ -7,25 +7,40 @@ const Navbar = () => {
   const [hideOnMobile, setHideOnMobile] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+    let homeHeight = document.getElementById("home")?.offsetHeight || 0;
+
+    const handleResize = () => {
+      homeHeight = document.getElementById("home")?.offsetHeight || 0;
+    };
+
     const handleScroll = () => {
-      const homeHeight = document.getElementById("home")?.offsetHeight || 0;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          setScrolled(scrollY > 50);
 
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-
-      // Hide only on mobile if user scrolls past Home section
-      if (window.innerWidth <= 768 && window.scrollY > homeHeight - 80) {
-        setHideOnMobile(true);
-      } else {
-        setHideOnMobile(false);
+          if (window.innerWidth <= 768) {
+            setHideOnMobile(scrollY > homeHeight - 80);
+          } else {
+            setHideOnMobile(false);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize, { passive: true });
+
+    // Initial query
+    handleResize();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
