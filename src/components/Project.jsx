@@ -26,8 +26,8 @@ const project = [
     description:
       "A full-stack MERN productivity platform featuring secure authentication, responsive dashboards, REST APIs, and efficient MongoDB integration. Developed in a collaborative team environment during internship.",
     stack: "React.js, Node.js, Express.js, MongoDB, JWT, REST APIs",
-    code: "https://github.com/omii88/ToggleNest2.git",
-    live: "https://togglenest.netlify.app/",
+    code: "https://github.com/devesh-2005pc/ToggleNest.git",
+    live: "https://togglenest2latest.vercel.app/",
     image: ToggleNest,
   },
   {
