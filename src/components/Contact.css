@@ -218,19 +218,28 @@
 
 @media (max-width: 768px) {
   .contact {
-    padding: 50px 15px;
+    padding: 50px 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .contact-container {
     flex-direction: column;
     align-items: center;
     gap: 25px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .contact-info,
   .contact-form-wrapper {
     width: 100%;
     max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
 
   .sub-heading {
@@ -247,6 +256,8 @@
     padding: 15px;
     font-size: 0.9rem;
     gap: 10px;
+    box-sizing: border-box;
+    width: 100%;
   }
 
   .info-icon {
@@ -260,23 +271,27 @@
 
   .contact form {
     padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .contact input,
   .contact textarea {
     font-size: 0.9rem;
     padding: 12px 14px;
+    box-sizing: border-box;
   }
 
   .contact button {
     font-size: 1rem;
     padding: 12px;
+    box-sizing: border-box;
   }
 }
 
 @media (max-width: 480px) {
   .contact {
-    padding: 40px 10px;
+    padding: 40px 12px;
   }
 
   .sub-heading {

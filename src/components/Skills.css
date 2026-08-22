@@ -124,11 +124,15 @@
 /* ---------- Responsive (Mobile View) ---------- */
 @media (max-width: 768px) {
   .skills-section {
-    padding: 30px 10px;
+    padding: 30px 12px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .skills-section h2 {
-    font-size: 1.8rem;
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
     margin-bottom: 20px;
   }
 
@@ -137,11 +141,15 @@
     grid-template-columns: repeat(2, 1fr); /* exactly 2 per row */
     gap: 15px;
     justify-items: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .flip-card {
     width: 120px;   /* smaller */
     height: 120px;  /* smaller */
+    max-width: 100%;
   }
 
   .flip-card-front .skill-icon {

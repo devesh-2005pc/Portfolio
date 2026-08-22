@@ -364,23 +364,94 @@
   .home-container {
     flex-direction: column;
     text-align: center;
-    gap: clamp(50px, 12vw, 80px);
+    gap: clamp(40px, 8vw, 60px);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
   .hero-img {
     max-width: 320px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
-  .home { padding: clamp(30px, 12vw, 60px) 16px; }
-  .buttons { flex-direction: column; align-items: center; }
-  .btn { width: 100%; max-width: 300px; }
-  .hero-img { max-width: 280px; }
+  .home { 
+    padding: clamp(30px, 8vw, 50px) 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .intro {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    align-items: center;
+  }
+  .intro h1 {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    line-height: 1.15;
+    word-break: break-word;
+    text-align: center;
+  }
+  .subtitle.typing {
+    font-size: clamp(1.05rem, 4vw, 1.35rem);
+    white-space: normal;
+    min-height: auto;
+    word-break: break-word;
+    text-align: center;
+    margin: 12px auto;
+    display: block;
+  }
+  .tagline {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .buttons { 
+    flex-direction: column; 
+    align-items: center; 
+    width: 100%;
+    gap: 12px;
+    margin-top: 18px;
+  }
+  .btn { 
+    width: 100%; 
+    max-width: 280px; 
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .hero-img { 
+    max-width: 260px;
+    min-width: 0;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .img-frame {
+    top: 10px;
+    left: 10px;
+    right: -10px;
+    bottom: -10px;
+  }
 }
 
 @media (max-width: 480px) {
-  .intro { gap: 12px; }
-  .hero-img { max-width: 240px; }
+  .intro { gap: 10px; }
+  .intro h1 {
+    font-size: clamp(1.75rem, 6.5vw, 2.2rem);
+  }
+  .subtitle.typing {
+    font-size: clamp(0.95rem, 3.8vw, 1.15rem);
+  }
+  .hero-img { max-width: 220px; }
+  .img-frame {
+    top: 8px;
+    left: 8px;
+    right: -8px;
+    bottom: -8px;
+  }
 }
 
 /* PERFORMANCE OPTIMIZATIONS - Optimized will-change is applied specifically to animating elements only */

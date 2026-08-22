@@ -123,18 +123,42 @@
 
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
+  .footer {
+    padding: 30px 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
   .footer-container {
     flex-direction: column;
     text-align: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .footer-left,
   .footer-middle,
   .footer-right {
-    min-width: 100%;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footer-icons {
+    justify-content: center;
   }
 
   .footer-right p {
     justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 24px 12px;
   }
 }

@@ -264,3 +264,52 @@ body.light .project-preview img:hover {
   transform: scale(1.09);
   box-shadow: 0 0 50px rgba(0, 120, 200, 0.55);
 }
+
+/* ---------- RESPONSIVE MOBILE ---------- */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 40px 16px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .projects-title {
+    font-size: clamp(2rem, 7vw, 2.5rem);
+  }
+
+  .projects-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+
+  .project-preview img {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .project-item h3 {
+    font-size: 1.4rem;
+  }
+
+  .project-desc {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-section {
+    padding: 30px 12px;
+  }
+
+  .projects-title {
+    font-size: clamp(1.75rem, 6vw, 2.1rem);
+  }
+}
+

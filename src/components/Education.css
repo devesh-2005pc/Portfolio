@@ -172,23 +172,37 @@
 /* ---------- Responsive (Mobile View) ---------- */
 @media (max-width: 768px) {
   .education-section {
-    padding: 50px 20px;
+    padding: 40px 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 6vw, 2.3rem);
     text-align: center; /* center heading on small screens */
+  }
+
+  .section-title::after {
+    margin: 10px auto 0;
   }
 
   .timeline {
     padding-left: 0; /* remove left padding */
     border-left: none; /* remove vertical line for mobile */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .timeline-item {
     padding: 18px 15px;
     margin-bottom: 20px;
     text-align: center; /* center text for clean look */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .timeline-icon {
@@ -217,19 +231,13 @@
     line-height: 1.4;
   }
 }
-/* ---------- Remove gaps between sections (Mobile) ---------- */
-@media (max-width: 768px) {
-  section {
-    margin: 0 !important;
-    padding-top: 40px;
-    padding-bottom: 40px;
+
+@media (max-width: 480px) {
+  .education-section {
+    padding: 30px 12px;
   }
 
-  /* If you want *no gap at all* */
-  section:first-child {
-    padding-top: 0;
-  }
-  section:last-child {
-    padding-bottom: 0;
+  .section-title {
+    font-size: clamp(1.6rem, 5.5vw, 1.9rem);
   }
 }

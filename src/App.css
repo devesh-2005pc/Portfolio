@@ -70,15 +70,23 @@ body {
 /* ===========================
    Global Mobile Responsive Styles
 =========================== */
+html, body, #root, .App {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 @media (max-width: 768px) {
   body {
-    padding: 0 15px;
+    padding: 0;
     font-size: 14px;
+    overflow-x: hidden;
   }
 
   section {
-    padding: 40px 20px;
+    padding: 40px 16px;
     text-align: center;
+    box-sizing: border-box;
   }
 
   img {
@@ -86,35 +94,9 @@ body {
     height: auto;
   }
 
-  .navbar {
-    flex-direction: column;
-    padding: 15px;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 10px;
-  }
-
-  .hero {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-text {
-    max-width: 100%;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-
-  .projects {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
   .footer {
     font-size: 12px;
     padding: 20px 10px;
   }
 }
+
