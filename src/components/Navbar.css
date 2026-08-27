@@ -165,11 +165,18 @@
     box-sizing: border-box;
     width: 100%;
     max-width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    overflow: hidden;
   }
 
   .navbar .logo {
-    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    font-size: clamp(1.1rem, 4.8vw, 1.5rem);
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 65vw;
   }
 
   /* Hide desktop nav links by default */
@@ -179,8 +186,10 @@
   }
 
   .nav-right {
-    gap: 12px;
+    gap: 8px;
     margin: 0;
+    min-width: 0;
+    max-width: 35vw;
   }
 
   /* Hamburger menu button */
@@ -201,6 +210,7 @@
     top: 60px;
     right: 16px;
     width: clamp(180px, 60vw, 240px);
+    max-width: calc(100vw - 32px);
     border-radius: 12px;
     padding: 15px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
@@ -237,7 +247,7 @@
   }
 
   .navbar .logo {
-    font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+    font-size: clamp(1rem, 4.2vw, 1.3rem);
   }
 
   .navbar.active ul {

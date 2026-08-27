@@ -258,10 +258,19 @@
     gap: 10px;
     box-sizing: border-box;
     width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .info-box a {
+    overflow-wrap: break-word;
+    word-break: break-all;
   }
 
   .info-icon {
     font-size: 1.3rem;
+    flex-shrink: 0;
   }
 
   .contact-form-wrapper h2 {

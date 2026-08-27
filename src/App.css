@@ -70,23 +70,39 @@ body {
 /* ===========================
    Global Mobile Responsive Styles
 =========================== */
-html, body, #root, .App {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body, #root, .App, main {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: clip;
 }
 
 @media (max-width: 768px) {
   body {
     padding: 0;
     font-size: 14px;
-    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   section {
     padding: 40px 16px;
     text-align: center;
     box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
   }
 
   img {
@@ -97,6 +113,10 @@ html, body, #root, .App {
   .footer {
     font-size: 12px;
     padding: 20px 10px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
+
 
