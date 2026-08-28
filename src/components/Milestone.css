@@ -438,10 +438,20 @@
 
 @media (max-width: 768px) {
   .milestone-section {
-    padding: 3rem 1rem 4rem;
+    padding: 40px 16px;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .milestone-title {
+    font-size: clamp(1.8rem, 6.5vw, 2.3rem);
+  }
+
+  .milestone-subtitle {
+    font-size: 0.92rem;
+    padding: 0 8px;
   }
 
   .milestone-line,
@@ -451,40 +461,75 @@
     display: none !important;
   }
 
+  .milestone-container {
+    margin: 24px auto 0;
+    padding: 20px 12px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    border-radius: 16px;
+  }
+
+  .timeline-row {
+    margin-bottom: 20px;
+    justify-content: center;
+    width: 100%;
+  }
+
   .milestone-card {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    padding: 16px 12px;
+    border-radius: 16px;
   }
 
-  .timeline-row {
-    margin-bottom: 2.4rem;
-    justify-content: center; /* center cards on small screens */
-    width: 100%;
+  .milestone-card h3 {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    text-align: center;
   }
 
-  .milestone-container {
-    padding: 2.5rem 0.9rem;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
+  .milestone-card small {
+    text-align: center;
+    display: block;
+  }
+
+  .milestone-card ul {
+    padding-left: 1.1rem;
+    text-align: left;
+    margin-top: 0.75rem;
+  }
+
+  .milestone-card li {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 0.4rem;
+  }
+
+  .ms-image-wrap {
+    height: 180px;
+    border-radius: 10px;
   }
 }
 
 @media (max-width: 480px) {
   .milestone-section {
-    padding: 2rem 0.5rem 3rem;
+    padding: 30px 12px;
   }
 
   .milestone-title {
-    font-size: clamp(1.75rem, 6vw, 2.2rem);
+    font-size: clamp(1.6rem, 5.8vw, 1.95rem);
   }
 
   .milestone-container {
-    padding: 1.8rem 0.75rem;
+    padding: 16px 8px;
   }
 
   .milestone-card {
-    padding: 1.1rem 1rem;
+    padding: 14px 10px;
+  }
+
+  .ms-image-wrap {
+    height: 160px;
   }
 }

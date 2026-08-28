@@ -42,6 +42,7 @@ html {
 }
 
 /* Light Theme */
+body.light,
 .light-theme {
   --bg-color: #f9fafb;
   --text-color: #111827;
@@ -49,6 +50,7 @@ html {
 }
 
 /* Dark Theme */
+body.dark,
 .dark-theme {
   --bg-color: #0f172a;
   --text-color: #f1f5f9;
@@ -56,8 +58,8 @@ html {
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--bg-color, #0f172a);
+  color: var(--text-color, #f1f5f9);
   transition: background 0.5s ease, color 0.5s ease;
 }
 
@@ -67,6 +69,7 @@ body {
   color: var(--text-color);
   transition: 0.3s ease-in-out;
 }
+
 /* ===========================
    Global Mobile Responsive Styles
 =========================== */
@@ -85,37 +88,37 @@ html, body, #root, .App, main {
 }
 
 html, body {
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 @media (max-width: 768px) {
   body {
     padding: 0;
+    margin: 0;
     font-size: 14px;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
   }
 
-  section {
-    padding: 40px 16px;
-    text-align: center;
-    box-sizing: border-box;
+  main {
     width: 100%;
     max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 
   img {
     max-width: 100%;
     height: auto;
-  }
-
-  .footer {
-    font-size: 12px;
-    padding: 20px 10px;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
   }
 }
 

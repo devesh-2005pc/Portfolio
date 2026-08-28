@@ -272,34 +272,91 @@ body.light .project-preview img:hover {
     box-sizing: border-box;
     width: 100%;
     max-width: 100%;
+    overflow: hidden;
   }
 
   .projects-title {
-    font-size: clamp(2rem, 7vw, 2.5rem);
+    font-size: clamp(1.8rem, 6.5vw, 2.4rem);
+    text-align: center;
   }
 
   .projects-subtitle {
     font-size: 0.95rem;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    text-align: center;
   }
 
   .projects-container {
     flex-direction: column;
-    gap: 30px;
+    gap: 24px;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .projects-list {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .project-item {
+    margin-bottom: 20px;
+    padding: 18px 14px;
+    text-align: center;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .project-item:hover {
+    transform: translateY(-4px);
+    border-left: none;
+  }
+
+  .project-item h3 {
+    font-size: clamp(1.25rem, 4.5vw, 1.5rem);
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .project-desc {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  .project-tech {
+    font-size: 0.88rem;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  .project-links {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .project-links a {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+
+  .project-preview {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .project-preview img {
     max-width: 100%;
     width: 100%;
-  }
-
-  .project-item h3 {
-    font-size: 1.4rem;
-  }
-
-  .project-desc {
-    font-size: 0.95rem;
+    height: auto;
+    display: block;
+    margin: 0 auto;
   }
 }
 
@@ -309,7 +366,11 @@ body.light .project-preview img:hover {
   }
 
   .projects-title {
-    font-size: clamp(1.75rem, 6vw, 2.1rem);
+    font-size: clamp(1.6rem, 5.8vw, 2rem);
+  }
+
+  .project-item {
+    padding: 14px 10px;
   }
 }
 

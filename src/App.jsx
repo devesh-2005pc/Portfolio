@@ -63,37 +63,16 @@ function App() {
       <div className="App">
         <Navbar />
 
-  <main>
-  <section id="home">
-    <Home />
-  </section>
-
-  <section id="about">
-    <Aboutme />
-  </section>
-
-  <section id="education">
-    <Education />
-  </section>
-
-  <section id="skills">
-    <Skills />
-  </section>
-
-  <section id="project">
-    <Project />
-  </section>
-
-  <section id="milestone">
-    <Milestone />
-  </section>
-
-  <section id="contact">
-    <Contact />
-  </section>
-
-  <Footer />
-</main>
+        <main>
+          <Home />
+          <Aboutme />
+          <Education />
+          <Skills />
+          <Project />
+          <Milestone />
+          <Contact />
+          <Footer />
+        </main>
 
       </div>
     </ThemeProvider>

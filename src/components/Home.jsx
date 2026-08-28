@@ -56,7 +56,7 @@ const TypingText = React.memo(() => {
 
 const Home = () => {
   return (
-    <section className="home">
+    <section className="home" id="home">
       <div className="home-container">
         <div className="intro">
           <h1>

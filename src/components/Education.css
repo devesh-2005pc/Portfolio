@@ -105,30 +105,6 @@
   opacity: 0.9;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .education-section {
-    padding: 60px 20px;
-  }
-
-  .timeline {
-    padding-left: 25px;
-  }
-
-  .timeline-icon {
-    left: -40px;
-    width: 30px;
-    height: 30px;
-    font-size: 0.85rem;
-  }
-
-  .timeline-item {
-    padding: 18px;
-  }
-}
-
-/* ---------- LIGHT THEME (overrides) ---------- */
-
 /* ---------- LIGHT THEME (overrides, improved) ---------- */
 .light .education-section {
   background: #f0f9ff; /* very light blue background instead of plain white */

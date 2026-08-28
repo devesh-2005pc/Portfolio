@@ -414,9 +414,10 @@
     overflow-wrap: break-word;
   }
   .subtitle.typing {
-    font-size: clamp(0.95rem, 3.8vw, 1.25rem);
+    font-size: clamp(0.95rem, 4vw, 1.25rem);
     white-space: normal;
-    min-height: auto;
+    overflow: visible;
+    min-height: 2.2em;
     word-break: break-word;
     overflow-wrap: break-word;
     text-align: center;

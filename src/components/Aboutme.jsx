@@ -9,7 +9,7 @@ const AboutMe = () => {
   useReveal();
 
   return (
-    <div className="about-wrapper">
+    <section className="about-wrapper" id="about">
       <div className="blob blob-1"></div>
       <div className="blob blob-2"></div>
 
@@ -65,7 +65,7 @@ const AboutMe = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
